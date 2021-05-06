@@ -1,0 +1,17 @@
+<h1>Login</h1>
+<form action="/sessions" method="POST">
+		<input type="hidden" name="authenticity_token"
+		value="<%=form_authenticity_token%>">
+		<input type="email" name="login[email]" placeholder="Email">
+		<input type="password" name="login[password]"
+		placeholder="Password">
+		<select name="user[role]" id="user[role]">
+			<option value="student">Student</option>
+			<option value="teacher">Teacher</option>
+		
+		</select>
+		<br>
+		<button type="submit">LOGIN</button>
+		<br>
+		<%= link_to('Do You Have No Account', {:action => 'signup'}) %>
+	</form>

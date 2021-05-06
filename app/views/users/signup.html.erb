@@ -1,0 +1,26 @@
+    <h1>Registeration</h1>
+	<form id="register" action="/users" method="POST
+	">
+		<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+		<input type="name" name="user[name]" placeholder="Name" required minlength="6">
+		<input type="email" name="user[email]" placeholder="Email" required>
+		<input type="password" name="user[password]" id="user[password]" placeholder="Password"
+		pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+		<input type="password" name="user[password_confirmation" placeholder="Password Confirmation ">
+		<br>
+		<br>
+		<select name="user[role]" id="user[role]">
+			<option value="student">Student</option>
+			<option value="teacher">Teacher</option>
+		
+		</select>
+		<br>
+		<br>
+		<button type="submit" name="submit" class="submit">Submit Here</button>
+		<br>
+		<br>
+		<%= link_to('Do You Have An Account', {:action => 'login'}) %>
+	</br>
+	</form>
+
+	
